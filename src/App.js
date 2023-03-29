@@ -4,9 +4,10 @@ import Home from "./pages/home";
 
 function App() {
   return (
-    <StyledContainer>
-      <p>{Home} </p>
-    </StyledContainer>
+         <StyledContainer> 
+          <Home/>
+     </StyledContainer>
+
   );
 }
 
