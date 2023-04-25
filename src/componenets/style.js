@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import background from './../assets/jj.jpeg'
 
 export const colors ={
-    primary: "#fff",
+    primary: "#ff6b6b",
     theme: "#BE185D",
     light1: "#3F4F6",
     light2: "#ESE7EB",
@@ -40,4 +40,13 @@ export const StyledSubTitle = styled.p`
     padding: 5px;
     margin-bottom: 25px;
 
+`;
+export const  Avatar = styled.div`
+    width: 85px;
+    height: 85px;
+    border-radius: 50px;
+    background-image: url(${props => props.image});
+    background-size: cover;
+    background-position: center;
+    margin: auto;
 `;
