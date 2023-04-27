@@ -1,0 +1,45 @@
+import {useField} from 'formik';
+import { useState } from 'react';
+import {
+    StyledTextInput, StyledLabel,StyledIcon
+ 
+} from './../componenets/style';
+//Eye for password
+import { FiEyeOff, FiEye } from 'react-icons/fi';
+export const TextInput = ({icon,  ...props}) => {
+    const [field, meta] = useField(props);
+    const [show, setShow]  = useState(false);
+
+    return(
+        <div style={{position: "relative"}}>
+            <StyledLabel htmlFor={props.name}>
+                {props.label}
+
+            </StyledLabel>
+            <StyledTextInput
+               {...field}
+               {...props}
+            />
+            {props.type === "password" && (
+                <StyledTextInput 
+                {...field} {...props} 
+                type={show ? "text": "password" } 
+                />
+
+            )}
+            <StyledIcon>
+                {icon}
+            </StyledIcon>
+            {
+                props.type === 'password ' && 
+                <StyledIcon onClick={() => setShow(!show) }right>
+                   { show && <FiEye/>}
+                    { !show && <FiEyeOff/>}
+                </StyledIcon>
+            }
+
+
+        </div>
+    )
+
+} 
