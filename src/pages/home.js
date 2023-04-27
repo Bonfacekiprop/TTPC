@@ -1,4 +1,4 @@
-import { StyledTitle, StyledSubTitle, Avatar} from "../componenets/style";
+import { StyledTitle, StyledSubTitle, Avatar, StyledButton,ButtonGroup} from "../componenets/style";
 //logo
 import Logo from "./../assets/logo.png";
 
@@ -7,7 +7,8 @@ const Home = () => {
         <div>
             <div style={{
               position: "absolute",
-              top: "95px",
+              top: 0,
+              // right: "60 px",
               backgroundColor: "transparent",
               width: "100",
               padding: "40px",
@@ -25,7 +26,10 @@ const Home = () => {
             Feel free to explore our page 
 
           </StyledSubTitle>
-          
+          <ButtonGroup>
+          <StyledButton to="/login">LogIn</StyledButton>
+          <StyledButton to="/signup">SignUp</StyledButton>
+          </ButtonGroup>
         </div>
     );
 }
