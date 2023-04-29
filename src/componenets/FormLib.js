@@ -1,9 +1,10 @@
 import {useField} from 'formik';
 import { useState } from 'react';
 import {
-    StyledTextInput, StyledLabel,StyledIcon
+    StyledTextInput, StyledLabel,StyledIcon, ErrorMsg
  
 } from './../componenets/style';
+
 //Eye for password
 import { FiEyeOff, FiEye } from 'react-icons/fi';
 export const TextInput = ({icon,  ...props}) => {
@@ -16,10 +17,10 @@ export const TextInput = ({icon,  ...props}) => {
                 {props.label}
 
             </StyledLabel>
-            <StyledTextInput
+            {props.type !=="password" && <StyledTextInput
                {...field}
                {...props}
-            />
+            />}
             {props.type === "password" && (
                 <StyledTextInput 
                 {...field} {...props} 
@@ -31,12 +32,17 @@ export const TextInput = ({icon,  ...props}) => {
                 {icon}
             </StyledIcon>
             {
-                props.type === 'password ' && 
+                props.type === 'password' && 
                 <StyledIcon onClick={() => setShow(!show) }right>
                    { show && <FiEye/>}
                     { !show && <FiEyeOff/>}
                 </StyledIcon>
             }
+            {meta.touched && meta.error ? (
+                <ErrorMsg> {meta.error} </ErrorMsg>
+            ): (
+                <ErrorMsg style={{visibility: "hidden"}}>.</ErrorMsg>
+            )}
 
 
         </div>

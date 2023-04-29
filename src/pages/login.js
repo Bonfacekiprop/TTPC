@@ -4,6 +4,7 @@ import Logo from './../assets/logo.png';
 import {Formik, Form} from 'formik';
 import { TextInput } from '../componenets/FormLib';
  import {FiMail, FiLock} from 'react-icons/fi';
+ import * as Yup from 'yup';
 const Login = () => {
     return(
         <div>
@@ -13,7 +14,28 @@ const Login = () => {
 
                 Member Login
                </StyledTitle>
-               <Formik>
+               <Formik 
+               
+               initialValues = {{
+                email: "",
+                password: "",
+            }}
+
+            validationSchema ={
+                Yup.object({
+                    email: Yup.string().email("Invalid email address")
+                    .required("Required"),
+                    password: Yup.string().min(8, "password is too short").max(30, "password is too long ").required(),
+                })
+            }
+            onSubmit={(values, {setSubmitting}) =>{
+                console.log(values)
+            }}
+               
+               >  
+
+
+                    
                      {() =>(
                         <Form>
                             <TextInput
