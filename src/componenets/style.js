@@ -9,7 +9,7 @@ import background from './../assets/jj.jpeg'
 import {Link as RouterLink} from 'react-router-dom'
 
 export const colors ={
-    primary: "#ff6b6b",
+    primary: "#fff",
     theme: "#BE185D",
     light1: "#3F4F6",
     light2: "#ESE7EB",
@@ -33,13 +33,13 @@ export const StyledContainer = styled.div`
 export const StyledTitle =  styled.h2`
     font-size: ${(props) => props.size}px;
     text-align: center;
-    color: ${(props) => props.color ? props.color: colors.primary }
+    color: ${(props) => props.colors ? props.colors: colors.primary }
     padding: 5px;
     margin-bottom: 25px;`;
 export const StyledSubTitle = styled.p`
     font-size: ${(props) => props.size}px;
     text-align: center;
-    color: ${(props) => props.color ? props.color: colors.primary }
+    color: ${(props) => props.colors ? props.colors: colors.primary }
     padding: 5px;
     margin-bottom: 25px;
 
@@ -61,6 +61,7 @@ export const StyledButton = styled(RouterLink)`
     border: 3px solid ${colors.primary};
     border-radius: 25px;
     color: ${colors.primary};
+    outline: 0;
     text-decoration:  none;
     text-align: center;
     transition: ease-in-out 0.3s;
@@ -117,12 +118,13 @@ export const StyledFormButton = styled.div`
     background-color: transparent;
     font-size: 16px;
     border: 3px solid ${colors.theme};
+    outline: 0;
     border-radius: 25px;
     color: ${colors.primary};
     transition: ease-in-out 0.3s;
     &:hover{
         background-color: ${colors.primary};
-        color: ${colors.primary};
+        color: ${colors.theme};
         cursor: pointer;
     }
 
@@ -149,5 +151,24 @@ export const ExtraText = styled.div`
     text-align: center;
     color:${(props) => (props.color? props.color : colors.dark2 ) };
     padding: 2px;
-    margin-top: 10px
+    margin-top: 10px;
+`;
+export const TextLink = styled(RouterLink)`
+    text-decoration: none;
+    color: ${colors.theme};
+    transition: ease-in-out 0.3s;
+
+    &: hover{
+        text-decoration: underline;
+        letter-spacing: 2px;
+        font-weight: bold;
+    }
+
+
+`;
+export const CopyrightText = styled.p`
+    padding: 50px;
+    margin: 20px;
+    text-align:center;
+    color: ${colors.light2}
 `;
