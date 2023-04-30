@@ -6,9 +6,9 @@ const Home = () => {
     return (
         <div>
             <div style={{
-              position: "absolute",
+              position: "relative",
               top: 0,
-              // right: "60 px",
+              right: "60 px",
               backgroundColor: "transparent",
               width: "100",
               padding: "40px",

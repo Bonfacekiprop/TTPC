@@ -23,13 +23,16 @@ export const TextInput = ({icon,  ...props}) => {
             />}
             {props.type === "password" && (
                 <StyledTextInput 
+                invalid={meta.touched && meta.error}
+                {...field}
+                {...props}
                 {...field} {...props} 
                 type={show ? "text": "password" } 
                 />
 
             )}
             <StyledIcon>
-                {icon}
+                {icon} 
             </StyledIcon>
             {
                 props.type === 'password' && 
