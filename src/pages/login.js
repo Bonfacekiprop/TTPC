@@ -1,10 +1,13 @@
 import {CopyrightText, StyledTextInput, StyledFormArea, StyledFormButton, StyledLabel,Avatar, StyledTitle, colors, ButtonGroup, ExtraText, TextLink} from './../componenets/style';
 import Logo from './../assets/logo.png';
-
+// forms
 import {Formik, Form} from 'formik';
 import { TextInput } from '../componenets/FormLib';
+// icons for password
  import {FiMail, FiLock} from 'react-icons/fi';
  import * as Yup from 'yup';
+ //loaders
+ import Loader from 'react-loader-spinner';
 const Login = () => {
     return(
         <div>
@@ -36,7 +39,7 @@ const Login = () => {
 
 
                     
-                     {() =>(
+                     {({isSubmitting}) =>(
                         <Form>
                             <TextInput
                                  name="email"
@@ -55,10 +58,20 @@ const Login = () => {
                                  
                             />
                             <ButtonGroup>
+                                {!isSubmitting && (
                                 <StyledFormButton 
                                 type="submit"> Login 
 
-                                </StyledFormButton>
+                                </StyledFormButton>)}
+                                {isSubmitting && (
+                                    <Loader
+                                       type="ThreeDots"
+                                       color={colors.theme}
+                                       height={45}
+                                       width={100}
+                                    />
+                                )}
+                                
                             </ButtonGroup>
 
                         </Form>
