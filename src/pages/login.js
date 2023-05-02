@@ -7,7 +7,7 @@ import { TextInput } from '../componenets/FormLib';
  import {FiMail, FiLock} from 'react-icons/fi';
  import * as Yup from 'yup';
  //loaders
- import Loader from 'react-loader-spinner';
+ import {Bars} from 'react-loader-spinner';
 const Login = () => {
     return(
         <div>
@@ -64,7 +64,7 @@ const Login = () => {
 
                                 </StyledFormButton>)}
                                 {isSubmitting && (
-                                    <Loader
+                                    <Bars
                                        type="ThreeDots"
                                        color={colors.theme}
                                        height={45}
