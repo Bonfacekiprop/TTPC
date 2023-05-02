@@ -91,7 +91,7 @@ const Signup = () => {
                             <ButtonGroup>
                                 {!isSubmitting && (
                                 <StyledFormButton 
-                                type="submit"> Login 
+                                type="submit"> Signup
 
                                 </StyledFormButton>)}
 
@@ -104,7 +104,7 @@ const Signup = () => {
                      }
                </Formik>
                <ExtraText>
-                    New here? <TextLink to="/signup"> Signup</TextLink>
+                    Already have an account? <TextLink to="/login"> login</TextLink>
                </ExtraText>
 
 
