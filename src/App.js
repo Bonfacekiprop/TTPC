@@ -14,7 +14,7 @@ function App() {
   return (
     <Router>
     <StyledContainer>
-      <Switch>
+      <Switch> 
         <Route path="/signup">
           <Signup/>
 
