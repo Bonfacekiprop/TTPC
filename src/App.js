@@ -5,36 +5,26 @@ import Login  from "./pages/login";
 import Signup from "./pages/signup";
 import Dashboard from "./pages/dashboard";
 import {
-  BrowserRouter as Router,Switch , Route  
+  BrowserRouter as Router,Routes , Route  
 } from 'react-router-dom';
 // react spinner
 // import ClipLoader from "react-spinners";
 
-function App() {
+const App = () => {
   return (
-    <Router>
+    
     <StyledContainer>
-      <Switch> 
-        <Route path="/signup">
-          <Signup/>
-
-        </Route>
-        <Route path="/login">
-          <Login/>
-
-        </Route>
-        <Route path="/dashboard">
-          <Dashboard/>
-
-        </Route>
-        <Route path="/">
-          <Home/>
-
-        </Route>
-      </Switch>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </Router>
       
     </StyledContainer>
-    </Router>
+    
   );
 }
 
