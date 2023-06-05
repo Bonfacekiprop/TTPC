@@ -18,7 +18,7 @@ const Home = () => {
 
             }}> 
               <Avatar image = {Logo}/>
-            </div>
+            </div >
           <StyledTitle size={65}>
             Welcome to TTPC
           </StyledTitle>
