@@ -30,7 +30,7 @@ const Dashboard = () => {
           <ButtonGroup>
           <StyledButton to="#">Logout</StyledButton>
           
-          </ButtonGroup>
+          </ButtonGroup >
                 
             </StyledFormArea>
           
